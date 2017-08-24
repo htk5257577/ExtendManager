@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ExtendedTableViewCell.h
 //  ExtendTableViewCell
 //
 //  Created by 胡焘坤 on 2017/8/23.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ExtendedTableViewCell : UITableViewCell
 
+- (void)configCell:(NSDictionary *)dataDic;
 
 @end
-

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ExtendTableViewCell.xcodeproj">
+      location = "self:/Users/hutaokun/Desktop/ExtendManager/ExtendManager.xcodeproj">
    </FileRef>
 </Workspace>
