@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5000C80B1F4ED8DE00CBA327 /* ExtendManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5000C80A1F4ED8DE00CBA327 /* ExtendManager.m */; };
 		500C08B71F4D4ED8005C468C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 500C08B61F4D4ED8005C468C /* main.m */; };
 		500C08BA1F4D4ED8005C468C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 500C08B91F4D4ED8005C468C /* AppDelegate.m */; };
 		500C08BD1F4D4ED8005C468C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 500C08BC1F4D4ED8005C468C /* ViewController.m */; };
@@ -15,10 +16,11 @@
 		500C08C51F4D4ED9005C468C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 500C08C31F4D4ED9005C468C /* LaunchScreen.storyboard */; };
 		500C08D21F4D7A6D005C468C /* ExtendedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 500C08D11F4D7A6D005C468C /* ExtendedTableViewCell.m */; };
 		500C08D51F4D7A90005C468C /* NormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 500C08D41F4D7A90005C468C /* NormalTableViewCell.m */; };
-		501520851F4EBA6500D6CA83 /* ExtendManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 501520841F4EBA6500D6CA83 /* ExtendManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5000C8091F4ED8DE00CBA327 /* ExtendManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendManager.h; sourceTree = "<group>"; };
+		5000C80A1F4ED8DE00CBA327 /* ExtendManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendManager.m; sourceTree = "<group>"; };
 		500C08B21F4D4ED8005C468C /* ExtendManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExtendManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		500C08B61F4D4ED8005C468C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		500C08B81F4D4ED8005C468C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,8 +35,6 @@
 		500C08D11F4D7A6D005C468C /* ExtendedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendedTableViewCell.m; sourceTree = "<group>"; };
 		500C08D31F4D7A90005C468C /* NormalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalTableViewCell.h; sourceTree = "<group>"; };
 		500C08D41F4D7A90005C468C /* NormalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalTableViewCell.m; sourceTree = "<group>"; };
-		501520831F4EBA6500D6CA83 /* ExtendManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendManager.h; sourceTree = "<group>"; };
-		501520841F4EBA6500D6CA83 /* ExtendManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +48,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5000C8081F4ED8DE00CBA327 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5000C8091F4ED8DE00CBA327 /* ExtendManager.h */,
+				5000C80A1F4ED8DE00CBA327 /* ExtendManager.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		500C08A91F4D4ED8005C468C = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +76,7 @@
 		500C08B41F4D4ED8005C468C /* ExtendManager */ = {
 			isa = PBXGroup;
 			children = (
+				5000C8081F4ED8DE00CBA327 /* Classes */,
 				500C08B81F4D4ED8005C468C /* AppDelegate.h */,
 				500C08B91F4D4ED8005C468C /* AppDelegate.m */,
 				500C08BB1F4D4ED8005C468C /* ViewController.h */,
@@ -80,8 +90,6 @@
 				500C08D11F4D7A6D005C468C /* ExtendedTableViewCell.m */,
 				500C08D31F4D7A90005C468C /* NormalTableViewCell.h */,
 				500C08D41F4D7A90005C468C /* NormalTableViewCell.m */,
-				501520831F4EBA6500D6CA83 /* ExtendManager.h */,
-				501520841F4EBA6500D6CA83 /* ExtendManager.m */,
 			);
 			path = ExtendManager;
 			sourceTree = "<group>";
@@ -171,7 +179,7 @@
 				500C08D21F4D7A6D005C468C /* ExtendedTableViewCell.m in Sources */,
 				500C08B71F4D4ED8005C468C /* main.m in Sources */,
 				500C08D51F4D7A90005C468C /* NormalTableViewCell.m in Sources */,
-				501520851F4EBA6500D6CA83 /* ExtendManager.m in Sources */,
+				5000C80B1F4ED8DE00CBA327 /* ExtendManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
