@@ -41,7 +41,7 @@
     [tableView beginUpdates];
     if (self.extendIndexPath) {
         [tableView deleteRowsAtIndexPaths:@[self.extendIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-        if (self.extendIndexPath.section == indexPath.section && self.extendIndexPath.row - 1 == indexPath.row) {
+        if (self.extendIndexPath.section == indexPath.section && (self.extendIndexPath.row - 1 == indexPath.row || self.extendIndexPath.row == indexPath.row)) {
             self.extendIndexPath = nil;
         }else if (self.extendIndexPath.section == indexPath.section && self.extendIndexPath.row < indexPath.row){
             self.extendIndexPath = indexPath;
