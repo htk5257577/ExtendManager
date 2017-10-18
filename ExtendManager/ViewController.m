@@ -66,5 +66,8 @@ static NSString* ExpandedCellIdentifier = @"ExtendedTableViewCell";
     return self.dataSource.count;
 }
 
-
+-(void)expendTableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSLog(@"按下了%@展开的cell",self.dataSource[indexPath.row][@"title"]);
+}
 @end

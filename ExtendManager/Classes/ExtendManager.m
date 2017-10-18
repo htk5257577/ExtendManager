@@ -40,13 +40,20 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView beginUpdates];
     if (self.extendIndexPath) {
-        [tableView deleteRowsAtIndexPaths:@[self.extendIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-        if (self.extendIndexPath.section == indexPath.section && (self.extendIndexPath.row - 1 == indexPath.row || self.extendIndexPath.row == indexPath.row)) {
+        
+        if (self.extendIndexPath.section == indexPath.section && self.extendIndexPath.row - 1 == indexPath.row) {
+            [tableView deleteRowsAtIndexPaths:@[self.extendIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             self.extendIndexPath = nil;
+        }else if (self.extendIndexPath.section == indexPath.section && self.extendIndexPath.row == indexPath.row){
+            if ([self.delegate respondsToSelector:@selector(expendTableView:didSelectRowAtIndexPath:)]) {
+                [self.delegate expendTableView:tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row - 1 inSection:indexPath.section]];
+            }
         }else if (self.extendIndexPath.section == indexPath.section && self.extendIndexPath.row < indexPath.row){
+            [tableView deleteRowsAtIndexPaths:@[self.extendIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             self.extendIndexPath = indexPath;
             [tableView insertRowsAtIndexPaths:@[self.extendIndexPath] withRowAnimation:UITableViewRowAnimationFade];
         }else{
+            [tableView deleteRowsAtIndexPaths:@[self.extendIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             self.extendIndexPath = [NSIndexPath indexPathForRow:indexPath.row + 1  inSection:indexPath.section];
             [tableView insertRowsAtIndexPaths:@[self.extendIndexPath] withRowAnimation:UITableViewRowAnimationFade];
         }

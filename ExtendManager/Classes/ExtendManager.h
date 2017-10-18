@@ -41,6 +41,15 @@
 
 @optional
 
+
+/**
+ @see tableView:didSelectRowAtIndexPath:
+
+ @param tableView 当前的tableVie
+ @param indexPath 当前展开的cell的index
+ */
+-(void)expendTableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+
 /**
  @see tableView:heightForRowAtIndexPath:
         若不实现此方法,高度为默认值
