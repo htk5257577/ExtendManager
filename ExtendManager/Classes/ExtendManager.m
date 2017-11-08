@@ -10,9 +10,26 @@
 
 @interface ExtendManager ()
 @property (nonatomic, retain)NSIndexPath *extendIndexPath;
+@property (nonatomic, assign)NSInteger dataCount;
 @end
 
 @implementation ExtendManager
+-(instancetype)init{
+    if (self = [super init]) {
+        [self addObserver:self forKeyPath:@"dataCount" options: NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+    }
+    return self;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"dataCount"]) {
+        if (change[@"new"] != change[@"old"]) {
+            self.extendIndexPath = nil;
+        }
+    }
+    
+}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (self.extendIndexPath && self.extendIndexPath.section == indexPath.section) {
@@ -82,13 +99,14 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    self.dataCount = [self.delegate normalTableView:tableView numberOfRowsInSection:section];
     if (self.extendIndexPath && self.extendIndexPath.section == section) {
         if ([self.delegate respondsToSelector:@selector(normalTableView:numberOfRowsInSection:)]) {
-            return [self.delegate normalTableView:tableView numberOfRowsInSection:section] + 1;
+            return self.dataCount + 1;
         }
     }else{
         if ([self.delegate respondsToSelector:@selector(normalTableView:numberOfRowsInSection:)]) {
-            return [self.delegate normalTableView:tableView numberOfRowsInSection:section];
+            return self.dataCount;
         }
     }
     return 0;
